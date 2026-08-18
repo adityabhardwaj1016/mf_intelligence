@@ -1,0 +1,111 @@
+{
+  "investor_id": "demo_single_005",
+  "generated_at": "2026-08-18T10:49:52.481644+00:00",
+  "headline": "Portfolio concentration is highly concentrated in a small number of holdings",
+  "insights": [
+    {
+      "category": "concentration",
+      "severity": "action",
+      "title": "Portfolio concentration is highly concentrated in a small number of holdings",
+      "explanation": "Your top holding is 100.0% of the portfolio and your top 3 holdings together make up 100.0% across 1 funds (HHI: 10000.0).",
+      "evidence": [
+        {
+          "label": "Herfindahl-Hirschman Index (concentration)",
+          "value": "10000.0",
+          "source": "computed:analytics/concentration.py"
+        },
+        {
+          "label": "Top holding weight",
+          "value": "100.0%",
+          "source": "computed:analytics/concentration.py"
+        },
+        {
+          "label": "Top 3 holdings weight",
+          "value": "100.0%",
+          "source": "computed:analytics/concentration.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "suitability",
+      "severity": "action",
+      "title": "Suitability check flagged",
+      "explanation": "Equity exposure (100%) is well above the illustrative '(110 - age)' heuristic ceiling of 70% for a 40-year-old. This is a rough rule of thumb, not a rule \u2014 worth a deliberate gut-check, not automatic action.",
+      "evidence": [
+        {
+          "label": "Suitability rule triggered",
+          "value": "age_equity_heuristic",
+          "source": "computed:analytics/suitability.py"
+        },
+        {
+          "label": "Detail",
+          "value": "Equity exposure (100%) is well above the illustrative '(110 - age)' heuristic ceiling of 70% for a 40-year-old. This is a rough rule of thumb, not a rule \u2014 worth a deliberate gut-check, not automatic action.",
+          "source": "computed:analytics/suitability.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "performance",
+      "severity": "info",
+      "title": "Kingsford Bluechip Fund: 1yr return vs category",
+      "explanation": "Kingsford Bluechip Fund returned 32.86% over the last year vs a typical 12.43% for its category, a gap of 20.43 percentage points.",
+      "evidence": [
+        {
+          "label": "Kingsford Bluechip Fund 1yr return",
+          "value": "32.86%",
+          "source": "computed:analytics/performance.py"
+        },
+        {
+          "label": "Category typical 1yr return",
+          "value": "12.43%",
+          "source": "data:category_benchmarks"
+        },
+        {
+          "label": "Gap vs category",
+          "value": "20.43 percentage points",
+          "source": "computed:analytics/performance.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "data_quality",
+      "severity": "info",
+      "title": "Some data gaps affected this analysis",
+      "explanation": "Investor risk appetite not provided. (Suitability checks against stated risk appetite are skipped.); Investment horizon not provided. (Horizon-based suitability checks (e.g. short horizon + high equity) are skipped.)",
+      "evidence": [
+        {
+          "label": "Data quality issue #1",
+          "value": "Investor risk appetite not provided.",
+          "source": "system"
+        },
+        {
+          "label": "Data quality issue #2",
+          "value": "Investment horizon not provided.",
+          "source": "system"
+        }
+      ],
+      "confidence": 0.75
+    }
+  ],
+  "data_quality_notes": [
+    {
+      "scheme_code": null,
+      "issue": "Investor risk appetite not provided.",
+      "impact": "Suitability checks against stated risk appetite are skipped."
+    },
+    {
+      "scheme_code": null,
+      "issue": "Investment horizon not provided.",
+      "impact": "Horizon-based suitability checks (e.g. short horizon + high equity) are skipped."
+    },
+    {
+      "scheme_code": null,
+      "issue": "Pipeline timing (ms): analytics=35.8, prioritization=0.1, reasoning[fallback_template]=0.3, validation=0.1, total=36.3",
+      "impact": "Informational only \u2014 surfaced for latency/cost observability, not a data quality issue."
+    }
+  ],
+  "disclaimer": "Auto-generated prototype analysis. Not investment advice. Figures are computed from the data sources documented in this project's README and may be incomplete or delayed."
+}

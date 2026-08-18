@@ -1,0 +1,232 @@
+[
+  {
+    "scheme_code": "100001",
+    "scheme_name": "Kingsford Bluechip Fund",
+    "amc": "Northbridge MF",
+    "category": "Equity",
+    "sub_category": "Large Cap",
+    "expense_ratio_pct": 0.97,
+    "risk_level": 4,
+    "launch_date": "2008-04-01"
+  },
+  {
+    "scheme_code": "100002",
+    "scheme_name": "Anchorage Bluechip Fund",
+    "amc": "Cardinal MF",
+    "category": "Equity",
+    "sub_category": "Large Cap",
+    "expense_ratio_pct": 0.97,
+    "risk_level": 4,
+    "launch_date": "2010-04-01"
+  },
+  {
+    "scheme_code": "100003",
+    "scheme_name": "Millrace Bluechip Fund",
+    "amc": "Vantage MF",
+    "category": "Equity",
+    "sub_category": "Large Cap",
+    "expense_ratio_pct": 0.93,
+    "risk_level": 4,
+    "launch_date": "2009-04-01"
+  },
+  {
+    "scheme_code": "100004",
+    "scheme_name": "Zenith Flexi Cap Fund",
+    "amc": "Northbridge MF",
+    "category": "Equity",
+    "sub_category": "Flexi Cap",
+    "expense_ratio_pct": 0.92,
+    "risk_level": 4,
+    "launch_date": "2009-04-01"
+  },
+  {
+    "scheme_code": "100005",
+    "scheme_name": "Redcliff Flexi Cap Fund",
+    "amc": "Vantage MF",
+    "category": "Equity",
+    "sub_category": "Flexi Cap",
+    "expense_ratio_pct": 1.02,
+    "risk_level": 4,
+    "launch_date": "2008-04-01"
+  },
+  {
+    "scheme_code": "100006",
+    "scheme_name": "Wrenfield Flexi Cap Fund",
+    "amc": "Vantage MF",
+    "category": "Equity",
+    "sub_category": "Flexi Cap",
+    "expense_ratio_pct": 0.92,
+    "risk_level": 4,
+    "launch_date": "2014-04-01"
+  },
+  {
+    "scheme_code": "100007",
+    "scheme_name": "Stonebridge Mid Cap Growth Fund",
+    "amc": "Alpine Asset Mgmt",
+    "category": "Equity",
+    "sub_category": "Mid Cap",
+    "expense_ratio_pct": 1.18,
+    "risk_level": 5,
+    "launch_date": "2008-04-01"
+  },
+  {
+    "scheme_code": "100008",
+    "scheme_name": "Silverline Mid Cap Growth Fund",
+    "amc": "Solstice MF",
+    "category": "Equity",
+    "sub_category": "Mid Cap",
+    "expense_ratio_pct": 1.03,
+    "risk_level": 5,
+    "launch_date": "2013-04-01"
+  },
+  {
+    "scheme_code": "100009",
+    "scheme_name": "Crestwood Mid Cap Growth Fund",
+    "amc": "Alpine Asset Mgmt",
+    "category": "Equity",
+    "sub_category": "Mid Cap",
+    "expense_ratio_pct": 0.98,
+    "risk_level": 5,
+    "launch_date": "2009-04-01"
+  },
+  {
+    "scheme_code": "100010",
+    "scheme_name": "Ridgeview Small Cap Fund",
+    "amc": "Alpine Asset Mgmt",
+    "category": "Equity",
+    "sub_category": "Small Cap",
+    "expense_ratio_pct": 1.33,
+    "risk_level": 6,
+    "launch_date": "2013-04-01"
+  },
+  {
+    "scheme_code": "100011",
+    "scheme_name": "Northstar Small Cap Fund",
+    "amc": "Solstice MF",
+    "category": "Equity",
+    "sub_category": "Small Cap",
+    "expense_ratio_pct": 1.19,
+    "risk_level": 6,
+    "launch_date": "2016-04-01"
+  },
+  {
+    "scheme_code": "100012",
+    "scheme_name": "Copperfield Small Cap Fund",
+    "amc": "Solstice MF",
+    "category": "Equity",
+    "sub_category": "Small Cap",
+    "expense_ratio_pct": 1.32,
+    "risk_level": 6,
+    "launch_date": "2009-04-01"
+  },
+  {
+    "scheme_code": "100013",
+    "scheme_name": "Oakvale Tax Saver Fund",
+    "amc": "Vantage MF",
+    "category": "Equity",
+    "sub_category": "ELSS (Tax Saving)",
+    "expense_ratio_pct": 1.02,
+    "risk_level": 5,
+    "launch_date": "2013-04-01"
+  },
+  {
+    "scheme_code": "100014",
+    "scheme_name": "Ashgrove Tax Saver Fund",
+    "amc": "Northbridge MF",
+    "category": "Equity",
+    "sub_category": "ELSS (Tax Saving)",
+    "expense_ratio_pct": 1.05,
+    "risk_level": 5,
+    "launch_date": "2008-04-01"
+  },
+  {
+    "scheme_code": "100015",
+    "scheme_name": "Bayline Tax Saver Fund",
+    "amc": "Northbridge MF",
+    "category": "Equity",
+    "sub_category": "ELSS (Tax Saving)",
+    "expense_ratio_pct": 1.11,
+    "risk_level": 5,
+    "launch_date": "2011-04-01"
+  },
+  {
+    "scheme_code": "100016",
+    "scheme_name": "Lakeshore Balanced Advantage Fund",
+    "amc": "Alpine Asset Mgmt",
+    "category": "Hybrid",
+    "sub_category": "Aggressive Hybrid",
+    "expense_ratio_pct": 0.94,
+    "risk_level": 4,
+    "launch_date": "2015-04-01"
+  },
+  {
+    "scheme_code": "100017",
+    "scheme_name": "Summit Balanced Advantage Fund",
+    "amc": "Cardinal MF",
+    "category": "Hybrid",
+    "sub_category": "Aggressive Hybrid",
+    "expense_ratio_pct": 0.86,
+    "risk_level": 4,
+    "launch_date": "2013-04-01"
+  },
+  {
+    "scheme_code": "100018",
+    "scheme_name": "Foxglove Short Term Debt Fund",
+    "amc": "Northbridge MF",
+    "category": "Debt",
+    "sub_category": "Short Duration",
+    "expense_ratio_pct": 0.54,
+    "risk_level": 2,
+    "launch_date": "2017-04-01"
+  },
+  {
+    "scheme_code": "100019",
+    "scheme_name": "Highbridge Short Term Debt Fund",
+    "amc": "Cardinal MF",
+    "category": "Debt",
+    "sub_category": "Short Duration",
+    "expense_ratio_pct": 0.46,
+    "risk_level": 2,
+    "launch_date": "2015-04-01"
+  },
+  {
+    "scheme_code": "100020",
+    "scheme_name": "Fernhill Liquid Fund",
+    "amc": "Vantage MF",
+    "category": "Debt",
+    "sub_category": "Liquid",
+    "expense_ratio_pct": 0.31,
+    "risk_level": 1,
+    "launch_date": "2011-04-01"
+  },
+  {
+    "scheme_code": "100021",
+    "scheme_name": "Horizon Liquid Fund",
+    "amc": "Cardinal MF",
+    "category": "Debt",
+    "sub_category": "Liquid",
+    "expense_ratio_pct": 0.34,
+    "risk_level": 1,
+    "launch_date": "2008-04-01"
+  },
+  {
+    "scheme_code": "100022",
+    "scheme_name": "Windermere Gold Fund of Fund",
+    "amc": "Alpine Asset Mgmt",
+    "category": "Other",
+    "sub_category": "Gold FoF",
+    "expense_ratio_pct": 0.51,
+    "risk_level": 4,
+    "launch_date": "2009-04-01"
+  },
+  {
+    "scheme_code": "100023",
+    "scheme_name": "Cobalt Gold Fund of Fund",
+    "amc": "Cardinal MF",
+    "category": "Other",
+    "sub_category": "Gold FoF",
+    "expense_ratio_pct": 0.6,
+    "risk_level": 4,
+    "launch_date": "2018-04-01"
+  }
+]

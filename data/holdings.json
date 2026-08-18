@@ -1,0 +1,632 @@
+{
+  "100001": [
+    {
+      "stock": "ICICI Bank",
+      "weight_pct": 11.21
+    },
+    {
+      "stock": "State Bank of India",
+      "weight_pct": 9.01
+    },
+    {
+      "stock": "Reliance Industries",
+      "weight_pct": 6.38
+    },
+    {
+      "stock": "Voltas",
+      "weight_pct": 7.38
+    },
+    {
+      "stock": "Infosys",
+      "weight_pct": 7.39
+    },
+    {
+      "stock": "Astral Ltd",
+      "weight_pct": 5.86
+    },
+    {
+      "stock": "Federal Bank",
+      "weight_pct": 6.25
+    },
+    {
+      "stock": "Axis Bank",
+      "weight_pct": 4.22
+    },
+    {
+      "stock": "Bharti Airtel",
+      "weight_pct": 3.69
+    },
+    {
+      "stock": "TCS",
+      "weight_pct": 2.96
+    }
+  ],
+  "100002": [
+    {
+      "stock": "State Bank of India",
+      "weight_pct": 9.78
+    },
+    {
+      "stock": "ITC",
+      "weight_pct": 9.65
+    },
+    {
+      "stock": "ICICI Bank",
+      "weight_pct": 9.47
+    },
+    {
+      "stock": "Reliance Industries",
+      "weight_pct": 7.01
+    },
+    {
+      "stock": "Axis Bank",
+      "weight_pct": 5.64
+    },
+    {
+      "stock": "HDFC Bank",
+      "weight_pct": 5.68
+    },
+    {
+      "stock": "Indian Hotels",
+      "weight_pct": 6.2
+    },
+    {
+      "stock": "Page Industries",
+      "weight_pct": 4.48
+    },
+    {
+      "stock": "Voltas",
+      "weight_pct": 3.8
+    },
+    {
+      "stock": "AU Small Finance Bank",
+      "weight_pct": 3.21
+    }
+  ],
+  "100003": [
+    {
+      "stock": "Infosys",
+      "weight_pct": 10.39
+    },
+    {
+      "stock": "Axis Bank",
+      "weight_pct": 8.94
+    },
+    {
+      "stock": "TCS",
+      "weight_pct": 8.29
+    },
+    {
+      "stock": "Larsen & Toubro",
+      "weight_pct": 7.54
+    },
+    {
+      "stock": "HDFC Bank",
+      "weight_pct": 5.87
+    },
+    {
+      "stock": "Bharti Airtel",
+      "weight_pct": 5.26
+    },
+    {
+      "stock": "Page Industries",
+      "weight_pct": 4.17
+    },
+    {
+      "stock": "Reliance Industries",
+      "weight_pct": 4.07
+    },
+    {
+      "stock": "AU Small Finance Bank",
+      "weight_pct": 3.84
+    },
+    {
+      "stock": "ICICI Bank",
+      "weight_pct": 3.5
+    }
+  ],
+  "100004": [
+    {
+      "stock": "HDFC Bank",
+      "weight_pct": 10.29
+    },
+    {
+      "stock": "Hindustan Unilever",
+      "weight_pct": 7.16
+    },
+    {
+      "stock": "Larsen & Toubro",
+      "weight_pct": 7.82
+    },
+    {
+      "stock": "Bharti Airtel",
+      "weight_pct": 7.0
+    },
+    {
+      "stock": "Infosys",
+      "weight_pct": 7.49
+    },
+    {
+      "stock": "ITC",
+      "weight_pct": 5.23
+    },
+    {
+      "stock": "Federal Bank",
+      "weight_pct": 5.4
+    },
+    {
+      "stock": "TCS",
+      "weight_pct": 5.22
+    },
+    {
+      "stock": "Persistent Systems",
+      "weight_pct": 5.03
+    },
+    {
+      "stock": "Trent Ltd",
+      "weight_pct": 4.42
+    }
+  ],
+  "100005": [
+    {
+      "stock": "Coforge",
+      "weight_pct": 7.5
+    },
+    {
+      "stock": "Bharti Airtel",
+      "weight_pct": 8.65
+    },
+    {
+      "stock": "Infosys",
+      "weight_pct": 8.26
+    },
+    {
+      "stock": "ICICI Bank",
+      "weight_pct": 8.03
+    },
+    {
+      "stock": "Reliance Industries",
+      "weight_pct": 7.88
+    },
+    {
+      "stock": "Kotak Mahindra Bank",
+      "weight_pct": 6.92
+    },
+    {
+      "stock": "Larsen & Toubro",
+      "weight_pct": 5.22
+    },
+    {
+      "stock": "Cummins India",
+      "weight_pct": 6.24
+    },
+    {
+      "stock": "TCS",
+      "weight_pct": 4.32
+    },
+    {
+      "stock": "HDFC Bank",
+      "weight_pct": 4.52
+    }
+  ],
+  "100006": [
+    {
+      "stock": "ITC",
+      "weight_pct": 12.61
+    },
+    {
+      "stock": "Larsen & Toubro",
+      "weight_pct": 10.01
+    },
+    {
+      "stock": "Federal Bank",
+      "weight_pct": 7.8
+    },
+    {
+      "stock": "HDFC Bank",
+      "weight_pct": 8.69
+    },
+    {
+      "stock": "Reliance Industries",
+      "weight_pct": 6.82
+    },
+    {
+      "stock": "Axis Bank",
+      "weight_pct": 5.2
+    },
+    {
+      "stock": "Page Industries",
+      "weight_pct": 5.46
+    },
+    {
+      "stock": "TCS",
+      "weight_pct": 5.26
+    },
+    {
+      "stock": "Bharti Airtel",
+      "weight_pct": 3.77
+    },
+    {
+      "stock": "Infosys",
+      "weight_pct": 3.36
+    }
+  ],
+  "100007": [
+    {
+      "stock": "Voltas",
+      "weight_pct": 9.04
+    },
+    {
+      "stock": "Page Industries",
+      "weight_pct": 9.12
+    },
+    {
+      "stock": "State Bank of India",
+      "weight_pct": 8.02
+    },
+    {
+      "stock": "Indian Hotels",
+      "weight_pct": 7.22
+    },
+    {
+      "stock": "Coforge",
+      "weight_pct": 6.94
+    },
+    {
+      "stock": "Federal Bank",
+      "weight_pct": 5.71
+    },
+    {
+      "stock": "Persistent Systems",
+      "weight_pct": 6.78
+    },
+    {
+      "stock": "Trent Ltd",
+      "weight_pct": 6.12
+    },
+    {
+      "stock": "Axis Bank",
+      "weight_pct": 4.11
+    },
+    {
+      "stock": "AU Small Finance Bank",
+      "weight_pct": 4.0
+    }
+  ],
+  "100008": [
+    {
+      "stock": "Indian Hotels",
+      "weight_pct": 12.58
+    },
+    {
+      "stock": "Coforge",
+      "weight_pct": 7.7
+    },
+    {
+      "stock": "ITC",
+      "weight_pct": 7.1
+    },
+    {
+      "stock": "Page Industries",
+      "weight_pct": 8.58
+    },
+    {
+      "stock": "Infosys",
+      "weight_pct": 5.87
+    },
+    {
+      "stock": "Voltas",
+      "weight_pct": 6.12
+    },
+    {
+      "stock": "Astral Ltd",
+      "weight_pct": 5.53
+    },
+    {
+      "stock": "Trent Ltd",
+      "weight_pct": 4.7
+    },
+    {
+      "stock": "AU Small Finance Bank",
+      "weight_pct": 3.86
+    },
+    {
+      "stock": "Persistent Systems",
+      "weight_pct": 4.17
+    }
+  ],
+  "100009": [
+    {
+      "stock": "AU Small Finance Bank",
+      "weight_pct": 8.74
+    },
+    {
+      "stock": "Page Industries",
+      "weight_pct": 7.7
+    },
+    {
+      "stock": "Coforge",
+      "weight_pct": 8.48
+    },
+    {
+      "stock": "Persistent Systems",
+      "weight_pct": 6.86
+    },
+    {
+      "stock": "Kotak Mahindra Bank",
+      "weight_pct": 8.8
+    },
+    {
+      "stock": "Astral Ltd",
+      "weight_pct": 7.99
+    },
+    {
+      "stock": "Indian Hotels",
+      "weight_pct": 5.07
+    },
+    {
+      "stock": "Voltas",
+      "weight_pct": 4.19
+    },
+    {
+      "stock": "Cummins India",
+      "weight_pct": 4.16
+    },
+    {
+      "stock": "Federal Bank",
+      "weight_pct": 2.89
+    }
+  ],
+  "100010": [
+    {
+      "stock": "Page Industries",
+      "weight_pct": 7.65
+    },
+    {
+      "stock": "Anupam Rasayan",
+      "weight_pct": 9.49
+    },
+    {
+      "stock": "Voltas",
+      "weight_pct": 7.29
+    },
+    {
+      "stock": "Federal Bank",
+      "weight_pct": 7.8
+    },
+    {
+      "stock": "Rainbow Children's Medicare",
+      "weight_pct": 8.21
+    },
+    {
+      "stock": "KEI Industries",
+      "weight_pct": 6.46
+    },
+    {
+      "stock": "Sonata Software",
+      "weight_pct": 5.7
+    },
+    {
+      "stock": "Route Mobile",
+      "weight_pct": 4.16
+    },
+    {
+      "stock": "Latent View Analytics",
+      "weight_pct": 4.55
+    },
+    {
+      "stock": "Gravita India",
+      "weight_pct": 3.13
+    }
+  ],
+  "100011": [
+    {
+      "stock": "Anupam Rasayan",
+      "weight_pct": 8.29
+    },
+    {
+      "stock": "Astral Ltd",
+      "weight_pct": 9.28
+    },
+    {
+      "stock": "Suven Pharma",
+      "weight_pct": 6.43
+    },
+    {
+      "stock": "Route Mobile",
+      "weight_pct": 6.19
+    },
+    {
+      "stock": "Cera Sanitaryware",
+      "weight_pct": 7.18
+    },
+    {
+      "stock": "Page Industries",
+      "weight_pct": 5.46
+    },
+    {
+      "stock": "Latent View Analytics",
+      "weight_pct": 6.6
+    },
+    {
+      "stock": "KEI Industries",
+      "weight_pct": 5.22
+    },
+    {
+      "stock": "Sonata Software",
+      "weight_pct": 4.69
+    },
+    {
+      "stock": "Gravita India",
+      "weight_pct": 2.95
+    }
+  ],
+  "100012": [
+    {
+      "stock": "Route Mobile",
+      "weight_pct": 10.33
+    },
+    {
+      "stock": "Cera Sanitaryware",
+      "weight_pct": 7.31
+    },
+    {
+      "stock": "Latent View Analytics",
+      "weight_pct": 7.79
+    },
+    {
+      "stock": "KEI Industries",
+      "weight_pct": 9.02
+    },
+    {
+      "stock": "Federal Bank",
+      "weight_pct": 7.44
+    },
+    {
+      "stock": "Anupam Rasayan",
+      "weight_pct": 6.97
+    },
+    {
+      "stock": "Indian Hotels",
+      "weight_pct": 5.32
+    },
+    {
+      "stock": "Sonata Software",
+      "weight_pct": 3.89
+    },
+    {
+      "stock": "Persistent Systems",
+      "weight_pct": 2.38
+    },
+    {
+      "stock": "Blue Star",
+      "weight_pct": 2.68
+    }
+  ],
+  "100013": [
+    {
+      "stock": "TCS",
+      "weight_pct": 10.32
+    },
+    {
+      "stock": "ITC",
+      "weight_pct": 10.99
+    },
+    {
+      "stock": "Coforge",
+      "weight_pct": 10.71
+    },
+    {
+      "stock": "Bharti Airtel",
+      "weight_pct": 7.4
+    },
+    {
+      "stock": "Infosys",
+      "weight_pct": 4.78
+    },
+    {
+      "stock": "HDFC Bank",
+      "weight_pct": 5.85
+    },
+    {
+      "stock": "Larsen & Toubro",
+      "weight_pct": 4.64
+    },
+    {
+      "stock": "ICICI Bank",
+      "weight_pct": 3.7
+    },
+    {
+      "stock": "Kotak Mahindra Bank",
+      "weight_pct": 4.32
+    },
+    {
+      "stock": "State Bank of India",
+      "weight_pct": 4.05
+    }
+  ],
+  "100014": [
+    {
+      "stock": "Axis Bank",
+      "weight_pct": 10.22
+    },
+    {
+      "stock": "State Bank of India",
+      "weight_pct": 8.44
+    },
+    {
+      "stock": "ICICI Bank",
+      "weight_pct": 10.62
+    },
+    {
+      "stock": "HDFC Bank",
+      "weight_pct": 10.32
+    },
+    {
+      "stock": "TCS",
+      "weight_pct": 7.62
+    },
+    {
+      "stock": "Trent Ltd",
+      "weight_pct": 8.1
+    },
+    {
+      "stock": "ITC",
+      "weight_pct": 3.01
+    },
+    {
+      "stock": "Kotak Mahindra Bank",
+      "weight_pct": 3.25
+    },
+    {
+      "stock": "Voltas",
+      "weight_pct": 2.9
+    },
+    {
+      "stock": "Reliance Industries",
+      "weight_pct": 2.22
+    }
+  ],
+  "100015": [
+    {
+      "stock": "Larsen & Toubro",
+      "weight_pct": 10.49
+    },
+    {
+      "stock": "TCS",
+      "weight_pct": 11.11
+    },
+    {
+      "stock": "Coforge",
+      "weight_pct": 10.97
+    },
+    {
+      "stock": "Infosys",
+      "weight_pct": 8.47
+    },
+    {
+      "stock": "Persistent Systems",
+      "weight_pct": 5.18
+    },
+    {
+      "stock": "Axis Bank",
+      "weight_pct": 4.55
+    },
+    {
+      "stock": "State Bank of India",
+      "weight_pct": 6.04
+    },
+    {
+      "stock": "Bharti Airtel",
+      "weight_pct": 3.86
+    },
+    {
+      "stock": "Cummins India",
+      "weight_pct": 3.77
+    },
+    {
+      "stock": "ITC",
+      "weight_pct": 2.87
+    }
+  ]
+}

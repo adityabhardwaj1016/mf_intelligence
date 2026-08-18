@@ -1,0 +1,144 @@
+{
+  "investor_id": "demo_concentrated_002",
+  "generated_at": "2026-08-18T10:49:51.723985+00:00",
+  "headline": "Portfolio concentration is highly concentrated in a small number of holdings",
+  "insights": [
+    {
+      "category": "concentration",
+      "severity": "action",
+      "title": "Portfolio concentration is highly concentrated in a small number of holdings",
+      "explanation": "Your top holding is 80.0% of the portfolio and your top 3 holdings together make up 100.0% across 3 funds (HHI: 6608.0).",
+      "evidence": [
+        {
+          "label": "Herfindahl-Hirschman Index (concentration)",
+          "value": "6608.0",
+          "source": "computed:analytics/concentration.py"
+        },
+        {
+          "label": "Top holding weight",
+          "value": "80.0%",
+          "source": "computed:analytics/concentration.py"
+        },
+        {
+          "label": "Top 3 holdings weight",
+          "value": "100.0%",
+          "source": "computed:analytics/concentration.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "performance",
+      "severity": "watch",
+      "title": "Zenith Flexi Cap Fund: 1yr return vs category",
+      "explanation": "Zenith Flexi Cap Fund returned -2.33% over the last year vs a typical 14.41% for its category, a gap of -16.74 percentage points.",
+      "evidence": [
+        {
+          "label": "Zenith Flexi Cap Fund 1yr return",
+          "value": "-2.33%",
+          "source": "computed:analytics/performance.py"
+        },
+        {
+          "label": "Category typical 1yr return",
+          "value": "14.41%",
+          "source": "data:category_benchmarks"
+        },
+        {
+          "label": "Gap vs category",
+          "value": "-16.74 percentage points",
+          "source": "computed:analytics/performance.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "overlap",
+      "severity": "watch",
+      "title": "Zenith Flexi Cap Fund and Redcliff Flexi Cap Fund overlap significantly",
+      "explanation": "These two funds share 28.55% weighted exposure to the same holdings (Bharti Airtel, HDFC Bank, Infosys, Larsen & Toubro, TCS), meaning holding both provides less diversification benefit than it may appear.",
+      "evidence": [
+        {
+          "label": "Weighted holdings overlap: Zenith Flexi Cap Fund vs Redcliff Flexi Cap Fund",
+          "value": "28.55%",
+          "source": "computed:analytics/overlap.py"
+        },
+        {
+          "label": "Shared top holdings",
+          "value": "Bharti Airtel, HDFC Bank, Infosys, Larsen & Toubro, TCS",
+          "source": "computed:analytics/overlap.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "overlap",
+      "severity": "watch",
+      "title": "Kingsford Bluechip Fund and Redcliff Flexi Cap Fund overlap significantly",
+      "explanation": "These two funds share 28.45% weighted exposure to the same holdings (Bharti Airtel, ICICI Bank, Infosys, Reliance Industries, TCS), meaning holding both provides less diversification benefit than it may appear.",
+      "evidence": [
+        {
+          "label": "Weighted holdings overlap: Kingsford Bluechip Fund vs Redcliff Flexi Cap Fund",
+          "value": "28.45%",
+          "source": "computed:analytics/overlap.py"
+        },
+        {
+          "label": "Shared top holdings",
+          "value": "Bharti Airtel, ICICI Bank, Infosys, Reliance Industries, TCS",
+          "source": "computed:analytics/overlap.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "performance",
+      "severity": "info",
+      "title": "Kingsford Bluechip Fund: 1yr return vs category",
+      "explanation": "Kingsford Bluechip Fund returned 32.86% over the last year vs a typical 12.43% for its category, a gap of 20.43 percentage points.",
+      "evidence": [
+        {
+          "label": "Kingsford Bluechip Fund 1yr return",
+          "value": "32.86%",
+          "source": "computed:analytics/performance.py"
+        },
+        {
+          "label": "Category typical 1yr return",
+          "value": "12.43%",
+          "source": "data:category_benchmarks"
+        },
+        {
+          "label": "Gap vs category",
+          "value": "20.43 percentage points",
+          "source": "computed:analytics/performance.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "overlap",
+      "severity": "watch",
+      "title": "Kingsford Bluechip Fund and Zenith Flexi Cap Fund overlap significantly",
+      "explanation": "These two funds share 19.44% weighted exposure to the same holdings (Bharti Airtel, Federal Bank, Infosys, TCS), meaning holding both provides less diversification benefit than it may appear.",
+      "evidence": [
+        {
+          "label": "Weighted holdings overlap: Kingsford Bluechip Fund vs Zenith Flexi Cap Fund",
+          "value": "19.44%",
+          "source": "computed:analytics/overlap.py"
+        },
+        {
+          "label": "Shared top holdings",
+          "value": "Bharti Airtel, Federal Bank, Infosys, TCS",
+          "source": "computed:analytics/overlap.py"
+        }
+      ],
+      "confidence": 0.75
+    }
+  ],
+  "data_quality_notes": [
+    {
+      "scheme_code": null,
+      "issue": "Pipeline timing (ms): analytics=24.0, prioritization=0.1, reasoning[fallback_template]=0.3, validation=0.1, total=24.5",
+      "impact": "Informational only \u2014 surfaced for latency/cost observability, not a data quality issue."
+    }
+  ],
+  "disclaimer": "Auto-generated prototype analysis. Not investment advice. Figures are computed from the data sources documented in this project's README and may be incomplete or delayed."
+}

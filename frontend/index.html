@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mutual Fund Portfolio Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FAF9F5;
+    --paper-raised: #FFFFFF;
+    --ink: #171F1C;
+    --ink-soft: #4B5750;
+    --ink-faint: #8B9289;
+    --teal: #0B5C48;
+    --teal-mist: #E4F0EC;
+    --coral: #A63A2E;
+    --coral-mist: #F5E7E4;
+    --amber: #9C6B1E;
+    --amber-mist: #F5EEE0;
+    --slate: #5B6570;
+    --slate-mist: #EAECEE;
+    --line: #DEDACF;
+    --line-strong: #C7C2B4;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .mono {
+    font-family: 'IBM Plex Mono', 'SF Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .serif {
+    font-family: 'Fraunces', Georgia, serif;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    border-bottom: 1px solid var(--line);
+    padding: 18px 28px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    background: var(--paper-raised);
+  }
+
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+  }
+  .wordmark span { color: var(--teal); }
+
+  .status-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--ink-faint);
+  }
+  .dot.ok { background: var(--teal); }
+  .dot.err { background: var(--coral); }
+
+  /* ---------- Layout ---------- */
+  .layout {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 0;
+    min-height: calc(100vh - 60px);
+  }
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Sidebar / form ---------- */
+  .sidebar {
+    border-right: 1px solid var(--line);
+    padding: 28px 24px 40px;
+    background: var(--paper-raised);
+  }
+  @media (max-width: 860px) {
+    .sidebar { border-right: none; border-bottom: 1px solid var(--line); }
+  }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 28px 0 12px;
+  }
+  .section-label:first-child { margin-top: 0; }
+
+  label {
+    display: block;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+    margin-top: 12px;
+  }
+  label:first-of-type { margin-top: 0; }
+
+  input, select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+  }
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px var(--teal-mist);
+  }
+  input[type="number"] { font-family: 'IBM Plex Mono', monospace; }
+
+  .holding-row {
+    display: grid;
+    grid-template-columns: 1fr 100px 24px;
+    gap: 6px;
+    align-items: end;
+    margin-top: 10px;
+  }
+  .holding-row label { display: none; }
+  .holding-row:first-of-type { margin-top: 0; }
+
+  .remove-btn {
+    width: 24px; height: 32px;
+    border: none;
+    background: none;
+    color: var(--ink-faint);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    align-self: center;
+  }
+  .remove-btn:hover { color: var(--coral); }
+
+  .add-holding {
+    margin-top: 12px;
+    width: 100%;
+    padding: 8px;
+    border: 1px dashed var(--line-strong);
+    border-radius: 6px;
+    background: none;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  .add-holding:hover { border-color: var(--teal); color: var(--teal); }
+
+  .analyze-btn {
+    width: 100%;
+    margin-top: 28px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--teal);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .analyze-btn:hover { background: #094a3a; }
+  .analyze-btn:disabled { background: var(--ink-faint); cursor: default; }
+
+  .pulse {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--paper);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .pulse.active { animation: pulse 1s ease-in-out infinite; }
+  }
+  @keyframes pulse { 0%,100% { opacity: 0.35; } 50% { opacity: 1; } }
+
+  .error-banner {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: var(--coral-mist);
+    color: var(--coral);
+    border-radius: 6px;
+    font-size: 12.5px;
+    display: none;
+  }
+  .error-banner.show { display: block; }
+
+  /* ---------- Results ---------- */
+  .results {
+    padding: 32px 40px 60px;
+    max-width: 760px;
+  }
+  @media (max-width: 860px) { .results { padding: 24px 20px 48px; } }
+
+  .empty-state {
+    color: var(--ink-faint);
+    font-size: 13.5px;
+    margin-top: 12px;
+  }
+  .empty-state .serif { font-size: 20px; color: var(--ink-soft); display: block; margin-bottom: 8px; }
+
+  .headline-block {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 24px;
+  }
+  .headline-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+  .headline {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .insight-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--slate);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .insight-card.action { border-left-color: var(--coral); }
+  .insight-card.watch { border-left-color: var(--amber); }
+  .insight-card.info { border-left-color: var(--slate); }
+
+  .insight-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .severity-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: var(--slate);
+    background: var(--slate-mist);
+  }
+  .severity-pill.action { color: var(--coral); background: var(--coral-mist); }
+  .severity-pill.watch { color: var(--amber); background: var(--amber-mist); }
+  .category-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .confidence {
+    margin-left: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ink-faint);
+  }
+
+  .insight-title {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+  .insight-explanation {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+
+  .evidence-toggle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--teal);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .evidence-list {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+    display: none;
+  }
+  .evidence-list.show { display: block; }
+  .evidence-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 12px;
+    padding: 3px 0;
+    flex-wrap: wrap;
+  }
+  .evidence-label { color: var(--ink-soft); flex: 1; min-width: 140px; }
+  .evidence-value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .provenance-chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+  }
+  .provenance-chip.computed { background: var(--teal-mist); color: var(--teal); }
+  .provenance-chip.data { background: var(--slate-mist); color: var(--slate); }
+  .provenance-chip.system { background: var(--amber-mist); color: var(--amber); }
+
+  .dq-section {
+    margin-top: 28px;
+  }
+  .dq-toggle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    background: none;
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+  }
+  .dq-list { display: none; margin-top: 10px; }
+  .dq-list.show { display: block; }
+  .dq-item {
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .dq-item:last-child { border-bottom: none; }
+  .dq-item .issue { color: var(--ink); }
+  .dq-item .impact { color: var(--ink-faint); font-size: 11.5px; margin-top: 2px; }
+
+  .disclaimer {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+
+  .skeleton {
+    display: none;
+  }
+  .skeleton.show { display: block; }
+  .skel-line {
+    height: 14px;
+    background: linear-gradient(90deg, var(--line) 25%, var(--paper) 50%, var(--line) 75%);
+    background-size: 200% 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .skel-line { animation: shimmer 1.4s ease infinite; }
+  }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">MF<span>i</span> — Mutual Fund Intelligence</div>
+  <div class="status-pill"><span class="dot" id="status-dot"></span><span id="status-text">connecting…</span></div>
+</header>
+
+<div class="layout">
+  <div class="sidebar">
+    <form id="analyze-form">
+      <div class="section-label">Investor</div>
+
+      <label for="age">Age</label>
+      <input type="number" id="age" min="18" max="100" placeholder="e.g. 32">
+
+      <label for="risk_appetite">Risk appetite</label>
+      <select id="risk_appetite">
+        <option value="">Not specified</option>
+        <option value="conservative">Conservative</option>
+        <option value="moderate">Moderate</option>
+        <option value="aggressive">Aggressive</option>
+      </select>
+
+      <label for="primary_goal">Primary goal</label>
+      <select id="primary_goal">
+        <option value="">Not specified</option>
+        <option value="retirement">Retirement</option>
+        <option value="wealth_creation">Wealth creation</option>
+        <option value="tax_saving">Tax saving</option>
+        <option value="short_term_goal">Short-term goal</option>
+        <option value="emergency_buffer">Emergency buffer</option>
+      </select>
+
+      <label for="horizon">Investment horizon (years)</label>
+      <input type="number" id="horizon" min="0" step="0.5" placeholder="e.g. 8">
+
+      <label for="surplus">Monthly surplus (₹, optional)</label>
+      <input type="number" id="surplus" min="0" placeholder="e.g. 25000">
+
+      <div class="section-label">Portfolio holdings</div>
+      <div id="holdings-container"></div>
+      <button type="button" class="add-holding" id="add-holding">+ Add holding</button>
+
+      <button type="submit" class="analyze-btn" id="analyze-btn">
+        <span id="btn-label">Analyze portfolio</span>
+      </button>
+      <div class="error-banner" id="error-banner"></div>
+    </form>
+  </div>
+
+  <div class="results" id="results">
+    <div class="empty-state" id="empty-state">
+      <span class="serif">No analysis yet</span>
+      Build a portfolio on the left — pick a few funds, enter amounts, and add whatever
+      investor details you have. Blank fields are fine; the system explains what it
+      couldn't check and why.
+    </div>
+
+    <div class="skeleton" id="skeleton">
+      <div class="skel-line" style="width: 40%; height: 26px; margin-bottom: 20px;"></div>
+      <div class="skel-line" style="width: 100%; height: 90px; border-radius: 10px;"></div>
+      <div class="skel-line" style="width: 100%; height: 90px; border-radius: 10px;"></div>
+      <div class="skel-line" style="width: 100%; height: 90px; border-radius: 10px;"></div>
+    </div>
+
+    <div id="results-content"></div>
+  </div>
+</div>
+
+<script>
+const API_BASE = ''; // same-origin: frontend is served by the FastAPI app itself
+
+let fundsByCode = {};
+let fundCatalog = [];
+
+// ---------------------------------------------------------------
+// Bootstrap: health check + fund catalog
+// ---------------------------------------------------------------
+async function init() {
+  try {
+    const health = await fetch(`${API_BASE}/health`).then(r => r.json());
+    document.getElementById('status-dot').classList.add('ok');
+    document.getElementById('status-text').textContent = `connected · data: ${health.data_mode}`;
+  } catch (e) {
+    document.getElementById('status-dot').classList.add('err');
+    document.getElementById('status-text').textContent = 'backend unreachable';
+    return;
+  }
+
+  try {
+    const data = await fetch(`${API_BASE}/funds`).then(r => r.json());
+    fundCatalog = data.funds;
+    fundCatalog.forEach(f => fundsByCode[f.scheme_code] = f);
+    addHoldingRow();
+    addHoldingRow();
+  } catch (e) {
+    showError('Could not load fund catalog: ' + e.message);
+  }
+}
+
+function buildFundOptions() {
+  const byCategory = {};
+  fundCatalog.forEach(f => {
+    const key = f.sub_category;
+    (byCategory[key] = byCategory[key] || []).push(f);
+  });
+  let html = '<option value="">Select a fund…</option>';
+  Object.keys(byCategory).sort().forEach(cat => {
+    html += `<optgroup label="${cat}">`;
+    byCategory[cat].forEach(f => {
+      html += `<option value="${f.scheme_code}">${f.scheme_name} (${f.scheme_code})</option>`;
+    });
+    html += '</optgroup>';
+  });
+  return html;
+}
+
+// ---------------------------------------------------------------
+// Dynamic holding rows
+// ---------------------------------------------------------------
+function addHoldingRow() {
+  const container = document.getElementById('holdings-container');
+  const row = document.createElement('div');
+  row.className = 'holding-row';
+  row.innerHTML = `
+    <select class="fund-select">${buildFundOptions()}</select>
+    <input type="number" class="amount-input mono" placeholder="₹ amount" min="0">
+    <button type="button" class="remove-btn" title="Remove holding">×</button>
+  `;
+  row.querySelector('.remove-btn').addEventListener('click', () => row.remove());
+  container.appendChild(row);
+}
+
+document.getElementById('add-holding').addEventListener('click', addHoldingRow);
+
+// ---------------------------------------------------------------
+// Submit
+// ---------------------------------------------------------------
+document.getElementById('analyze-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  hideError();
+
+  const holdings = [];
+  document.querySelectorAll('.holding-row').forEach(row => {
+    const code = row.querySelector('.fund-select').value;
+    const amountRaw = row.querySelector('.amount-input').value;
+    if (!code) return;
+    const holding = { scheme_code: code };
+    if (amountRaw !== '') holding.invested_amount = parseFloat(amountRaw);
+    holdings.push(holding);
+  });
+
+  if (holdings.length === 0) {
+    showError('Add at least one fund holding before analyzing.');
+    return;
+  }
+
+  const investor = { investor_id: 'web_' + Date.now() };
+  const age = document.getElementById('age').value;
+  if (age) investor.age = parseInt(age);
+  const risk = document.getElementById('risk_appetite').value;
+  if (risk) investor.risk_appetite = risk;
+  const goal = document.getElementById('primary_goal').value;
+  if (goal) investor.primary_goal = goal;
+  const horizon = document.getElementById('horizon').value;
+  if (horizon) investor.investment_horizon_years = parseFloat(horizon);
+  const surplus = document.getElementById('surplus').value;
+  if (surplus) investor.monthly_investable_surplus = parseFloat(surplus);
+
+  setLoading(true);
+  try {
+    const res = await fetch(`${API_BASE}/analyze`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ investor, portfolio: { holdings } }),
+    });
+    if (!res.ok) {
+      const errBody = await res.json().catch(() => ({}));
+      throw new Error(errBody.detail || `Request failed (${res.status})`);
+    }
+    const data = await res.json();
+    renderResults(data);
+  } catch (err) {
+    showError(err.message);
+  } finally {
+    setLoading(false);
+  }
+});
+
+function setLoading(loading) {
+  const btn = document.getElementById('analyze-btn');
+  const label = document.getElementById('btn-label');
+  btn.disabled = loading;
+  document.getElementById('empty-state').style.display = 'none';
+  document.getElementById('skeleton').classList.toggle('show', loading);
+  if (loading) {
+    document.getElementById('results-content').innerHTML = '';
+    label.innerHTML = 'Analyzing <span class="pulse active"></span>';
+  } else {
+    label.textContent = 'Analyze portfolio';
+  }
+}
+
+function showError(msg) {
+  const banner = document.getElementById('error-banner');
+  banner.textContent = msg;
+  banner.classList.add('show');
+}
+function hideError() {
+  document.getElementById('error-banner').classList.remove('show');
+}
+
+// ---------------------------------------------------------------
+// Render
+// ---------------------------------------------------------------
+function severityOrder(s) { return { action: 0, watch: 1, info: 2 }[s] ?? 3; }
+
+function provenanceClass(source) {
+  if (source.startsWith('computed:')) return 'computed';
+  if (source.startsWith('data:')) return 'data';
+  return 'system';
+}
+
+function renderResults(data) {
+  const el = document.getElementById('results-content');
+  document.getElementById('skeleton').classList.remove('show');
+
+  let html = `
+    <div class="headline-block">
+      <div class="headline-eyebrow mono">${data.investor_id} · generated ${new Date(data.generated_at).toLocaleString()}</div>
+      <div class="headline serif">${escapeHtml(data.headline)}</div>
+    </div>
+  `;
+
+  if (data.insights.length === 0) {
+    html += `<div class="empty-state"><span class="serif">No material insights</span>No flags were raised for this portfolio with the data available — that itself is a meaningful, honest result, not a system failure.</div>`;
+  }
+
+  data.insights.forEach((insight, i) => {
+    const evidenceId = `ev-${i}`;
+    html += `
+      <div class="insight-card ${insight.severity}">
+        <div class="insight-meta">
+          <span class="severity-pill ${insight.severity}">${insight.severity}</span>
+          <span class="category-label">${insight.category.replace('_', ' ')}</span>
+          <span class="confidence mono">confidence ${(insight.confidence * 100).toFixed(0)}%</span>
+        </div>
+        <div class="insight-title serif">${escapeHtml(insight.title)}</div>
+        <div class="insight-explanation">${escapeHtml(insight.explanation)}</div>
+        <button type="button" class="evidence-toggle" data-target="${evidenceId}">▸ ${insight.evidence.length} evidence item${insight.evidence.length !== 1 ? 's' : ''}</button>
+        <div class="evidence-list" id="${evidenceId}">
+          ${insight.evidence.map(ev => `
+            <div class="evidence-row">
+              <span class="evidence-label">${escapeHtml(ev.label)}</span>
+              <span class="evidence-value mono">${escapeHtml(ev.value)}</span>
+              <span class="provenance-chip ${provenanceClass(ev.source)} mono">${escapeHtml(ev.source)}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  });
+
+  if (data.data_quality_notes.length > 0) {
+    html += `
+      <div class="dq-section">
+        <button type="button" class="dq-toggle" id="dq-toggle">
+          <span>Data quality &amp; pipeline notes (${data.data_quality_notes.length})</span>
+          <span>▸</span>
+        </button>
+        <div class="dq-list" id="dq-list">
+          ${data.data_quality_notes.map(n => `
+            <div class="dq-item">
+              <div class="issue">${n.scheme_code ? `<span class="mono">${n.scheme_code}</span> — ` : ''}${escapeHtml(n.issue)}</div>
+              <div class="impact">${escapeHtml(n.impact)}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  html += `<div class="disclaimer">${escapeHtml(data.disclaimer)}</div>`;
+
+  el.innerHTML = html;
+
+  document.querySelectorAll('.evidence-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.target);
+      const isShown = target.classList.toggle('show');
+      btn.textContent = btn.textContent.replace(/^[▸▾]/, isShown ? '▾' : '▸');
+    });
+  });
+
+  const dqToggle = document.getElementById('dq-toggle');
+  if (dqToggle) {
+    dqToggle.addEventListener('click', () => {
+      document.getElementById('dq-list').classList.toggle('show');
+    });
+  }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+init();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+{
+  "investor_id": "demo_suitability_004",
+  "generated_at": "2026-08-18T10:49:52.183049+00:00",
+  "headline": "Ridgeview Small Cap Fund: 1yr return vs category",
+  "insights": [
+    {
+      "category": "performance",
+      "severity": "watch",
+      "title": "Ridgeview Small Cap Fund: 1yr return vs category",
+      "explanation": "Ridgeview Small Cap Fund returned -20.99% over the last year vs a typical 15.07% for its category, a gap of -36.06 percentage points.",
+      "evidence": [
+        {
+          "label": "Ridgeview Small Cap Fund 1yr return",
+          "value": "-20.99%",
+          "source": "computed:analytics/performance.py"
+        },
+        {
+          "label": "Category typical 1yr return",
+          "value": "15.07%",
+          "source": "data:category_benchmarks"
+        },
+        {
+          "label": "Gap vs category",
+          "value": "-36.06 percentage points",
+          "source": "computed:analytics/performance.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "concentration",
+      "severity": "action",
+      "title": "Portfolio concentration is highly concentrated in a small number of holdings",
+      "explanation": "Your top holding is 44.44% of the portfolio and your top 3 holdings together make up 99.99% across 3 funds (HHI: 3579.53).",
+      "evidence": [
+        {
+          "label": "Herfindahl-Hirschman Index (concentration)",
+          "value": "3579.53",
+          "source": "computed:analytics/concentration.py"
+        },
+        {
+          "label": "Top holding weight",
+          "value": "44.44%",
+          "source": "computed:analytics/concentration.py"
+        },
+        {
+          "label": "Top 3 holdings weight",
+          "value": "99.99%",
+          "source": "computed:analytics/concentration.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "performance",
+      "severity": "info",
+      "title": "Northstar Small Cap Fund: 1yr return vs category",
+      "explanation": "Northstar Small Cap Fund returned 51.15% over the last year vs a typical 15.07% for its category, a gap of 36.08 percentage points.",
+      "evidence": [
+        {
+          "label": "Northstar Small Cap Fund 1yr return",
+          "value": "51.15%",
+          "source": "computed:analytics/performance.py"
+        },
+        {
+          "label": "Category typical 1yr return",
+          "value": "15.07%",
+          "source": "data:category_benchmarks"
+        },
+        {
+          "label": "Gap vs category",
+          "value": "36.08 percentage points",
+          "source": "computed:analytics/performance.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "suitability",
+      "severity": "action",
+      "title": "Suitability check flagged",
+      "explanation": "Portfolio's weighted risk level (5.8/6) is higher than typically expected for a 'conservative' investor (expected up to 3.0/6).",
+      "evidence": [
+        {
+          "label": "Suitability rule triggered",
+          "value": "risk_above_appetite",
+          "source": "computed:analytics/suitability.py"
+        },
+        {
+          "label": "Detail",
+          "value": "Portfolio's weighted risk level (5.8/6) is higher than typically expected for a 'conservative' investor (expected up to 3.0/6).",
+          "source": "computed:analytics/suitability.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "suitability",
+      "severity": "action",
+      "title": "Suitability check flagged",
+      "explanation": "Investment horizon is under 3 years but equity exposure is 100% of the portfolio \u2014 equity markets can be volatile over short periods, raising the risk of having to sell at a loss.",
+      "evidence": [
+        {
+          "label": "Suitability rule triggered",
+          "value": "short_horizon_high_equity",
+          "source": "computed:analytics/suitability.py"
+        },
+        {
+          "label": "Detail",
+          "value": "Investment horizon is under 3 years but equity exposure is 100% of the portfolio \u2014 equity markets can be volatile over short periods, raising the risk of having to sell at a loss.",
+          "source": "computed:analytics/suitability.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "suitability",
+      "severity": "action",
+      "title": "Suitability check flagged",
+      "explanation": "Stated goal is a short-term goal, but 100% of the portfolio is in equity \u2014 for near-term goals, capital protection is usually prioritised over growth.",
+      "evidence": [
+        {
+          "label": "Suitability rule triggered",
+          "value": "goal_mismatch_short_term",
+          "source": "computed:analytics/suitability.py"
+        },
+        {
+          "label": "Detail",
+          "value": "Stated goal is a short-term goal, but 100% of the portfolio is in equity \u2014 for near-term goals, capital protection is usually prioritised over growth.",
+          "source": "computed:analytics/suitability.py"
+        }
+      ],
+      "confidence": 0.75
+    }
+  ],
+  "data_quality_notes": [
+    {
+      "scheme_code": null,
+      "issue": "Pipeline timing (ms): analytics=22.6, prioritization=0.1, reasoning[fallback_template]=0.3, validation=0.1, total=23.1",
+      "impact": "Informational only \u2014 surfaced for latency/cost observability, not a data quality issue."
+    }
+  ],
+  "disclaimer": "Auto-generated prototype analysis. Not investment advice. Figures are computed from the data sources documented in this project's README and may be incomplete or delayed."
+}

@@ -1,0 +1,98 @@
+{
+  "investor_id": "demo_missing_003",
+  "generated_at": "2026-08-18T10:49:51.948948+00:00",
+  "headline": "Portfolio concentration is highly concentrated in a small number of holdings",
+  "insights": [
+    {
+      "category": "concentration",
+      "severity": "action",
+      "title": "Portfolio concentration is highly concentrated in a small number of holdings",
+      "explanation": "Your top holding is 100.0% of the portfolio and your top 3 holdings together make up 100.0% across 1 funds (HHI: 10000.0).",
+      "evidence": [
+        {
+          "label": "Herfindahl-Hirschman Index (concentration)",
+          "value": "10000.0",
+          "source": "computed:analytics/concentration.py"
+        },
+        {
+          "label": "Top holding weight",
+          "value": "100.0%",
+          "source": "computed:analytics/concentration.py"
+        },
+        {
+          "label": "Top 3 holdings weight",
+          "value": "100.0%",
+          "source": "computed:analytics/concentration.py"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "data_quality",
+      "severity": "info",
+      "title": "Some data gaps affected this analysis",
+      "explanation": "Scheme code not found in fund catalog. (This holding is excluded from all allocation, concentration, and suitability calculations.); Fund identified, but no invested amount / value provided. (This holding is excluded from allocation-weighted calculations; its risk/performance can still be reported standalone.); NAV history unavailable for this scheme. (Risk metrics (volatility, drawdown, Sharpe) omitted for this fund.)",
+      "evidence": [
+        {
+          "label": "Data quality issue #1",
+          "value": "Scheme code not found in fund catalog.",
+          "source": "system"
+        },
+        {
+          "label": "Data quality issue #2",
+          "value": "Fund identified, but no invested amount / value provided.",
+          "source": "system"
+        },
+        {
+          "label": "Data quality issue #3",
+          "value": "NAV history unavailable for this scheme.",
+          "source": "system"
+        },
+        {
+          "label": "Data quality issue #4",
+          "value": "Insufficient NAV history to compute returns.",
+          "source": "system"
+        },
+        {
+          "label": "Data quality issue #5",
+          "value": "Investment horizon not provided.",
+          "source": "system"
+        }
+      ],
+      "confidence": 0.75
+    }
+  ],
+  "data_quality_notes": [
+    {
+      "scheme_code": "999999",
+      "issue": "Scheme code not found in fund catalog.",
+      "impact": "This holding is excluded from all allocation, concentration, and suitability calculations."
+    },
+    {
+      "scheme_code": "100020",
+      "issue": "Fund identified, but no invested amount / value provided.",
+      "impact": "This holding is excluded from allocation-weighted calculations; its risk/performance can still be reported standalone."
+    },
+    {
+      "scheme_code": "999999",
+      "issue": "NAV history unavailable for this scheme.",
+      "impact": "Risk metrics (volatility, drawdown, Sharpe) omitted for this fund."
+    },
+    {
+      "scheme_code": "999999",
+      "issue": "Insufficient NAV history to compute returns.",
+      "impact": "Return figures omitted for this fund."
+    },
+    {
+      "scheme_code": null,
+      "issue": "Investment horizon not provided.",
+      "impact": "Horizon-based suitability checks (e.g. short horizon + high equity) are skipped."
+    },
+    {
+      "scheme_code": null,
+      "issue": "Pipeline timing (ms): analytics=21.1, prioritization=0.0, reasoning[fallback_template]=0.2, validation=0.1, total=21.4",
+      "impact": "Informational only \u2014 surfaced for latency/cost observability, not a data quality issue."
+    }
+  ],
+  "disclaimer": "Auto-generated prototype analysis. Not investment advice. Figures are computed from the data sources documented in this project's README and may be incomplete or delayed."
+}

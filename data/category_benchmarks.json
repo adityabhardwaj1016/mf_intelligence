@@ -1,0 +1,65 @@
+{
+  "Large Cap": {
+    "category": "Equity",
+    "sub_category": "Large Cap",
+    "typical_1yr_return_pct": 12.43,
+    "typical_3yr_cagr_pct": 11.02,
+    "typical_annualised_volatility_pct": 15.0
+  },
+  "Flexi Cap": {
+    "category": "Equity",
+    "sub_category": "Flexi Cap",
+    "typical_1yr_return_pct": 14.41,
+    "typical_3yr_cagr_pct": 13.82,
+    "typical_annualised_volatility_pct": 17.0
+  },
+  "Mid Cap": {
+    "category": "Equity",
+    "sub_category": "Mid Cap",
+    "typical_1yr_return_pct": 15.03,
+    "typical_3yr_cagr_pct": 15.09,
+    "typical_annualised_volatility_pct": 22.0
+  },
+  "Small Cap": {
+    "category": "Equity",
+    "sub_category": "Small Cap",
+    "typical_1yr_return_pct": 15.07,
+    "typical_3yr_cagr_pct": 15.39,
+    "typical_annualised_volatility_pct": 27.0
+  },
+  "ELSS (Tax Saving)": {
+    "category": "Equity",
+    "sub_category": "ELSS (Tax Saving)",
+    "typical_1yr_return_pct": 12.13,
+    "typical_3yr_cagr_pct": 13.68,
+    "typical_annualised_volatility_pct": 18.0
+  },
+  "Aggressive Hybrid": {
+    "category": "Hybrid",
+    "sub_category": "Aggressive Hybrid",
+    "typical_1yr_return_pct": 9.36,
+    "typical_3yr_cagr_pct": 9.07,
+    "typical_annualised_volatility_pct": 12.0
+  },
+  "Short Duration": {
+    "category": "Debt",
+    "sub_category": "Short Duration",
+    "typical_1yr_return_pct": 7.86,
+    "typical_3yr_cagr_pct": 5.72,
+    "typical_annualised_volatility_pct": 2.0
+  },
+  "Liquid": {
+    "category": "Debt",
+    "sub_category": "Liquid",
+    "typical_1yr_return_pct": 6.89,
+    "typical_3yr_cagr_pct": 5.1,
+    "typical_annualised_volatility_pct": 0.5
+  },
+  "Gold FoF": {
+    "category": "Other",
+    "sub_category": "Gold FoF",
+    "typical_1yr_return_pct": 8.51,
+    "typical_3yr_cagr_pct": 9.9,
+    "typical_annualised_volatility_pct": 13.0
+  }
+}
